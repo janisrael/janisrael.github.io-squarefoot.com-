@@ -1,0 +1,643 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:800);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-color: #fff;
+	background-image: url("../images/bg.jpg");
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center top;
+}
+
+.container {
+	position: relative;
+	opacity: 1!important;
+	.core {
+		position: relative;
+		opacity: 1!important;
+	}
+}
+
+.container .core > div.p1,
+.container .core > div.p1-after,
+.container .core > div.p2,
+.container .core > div.p3 {
+	min-width: 1280px;
+}
+
+.container .core > div.p1 {
+    background-image: url("../images/p1-bg-after.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 100%; height: 535px;
+	top: 275px;
+	z-index: 999;
+}
+
+.container .core > div.p1-after {
+	content: '';
+    background-image: url("../images/p1-bg.png");
+    background-position: top center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%; height: 528px;
+	top: 275px;
+}
+
+.container .core > div.p2 {
+	background-image: url("../images/p2-bg.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 100%; height: 747px;
+	top: 785px;
+}
+
+.container .core > div.p3 {
+    background-image: url("../images/p1-bg.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 100%; height: 535px;
+	top: 1835px;
+}
+
+.container .core > div.objects {
+	position: absolute;
+	width: 1280px; height: auto;
+	left: 0px; right: 0px;
+	margin: 0px auto;
+}
+
+.container .core > div.objects > .p1{
+	z-index: 9;
+}
+
+.container .core > div.objects > .p2{
+	z-index: 99;
+}
+
+.container .core > div.objects > .p2{
+	z-index: 1;
+}
+
+.container .core > div.objects > div.circle {
+	position: absolute;
+	.border-radius(50%);
+	.box-sizing(border-box);
+	overflow: hidden;
+	cursor: pointer;
+	.transition(transform .3s);
+	z-index: 9999;
+	* {
+		cursor: pointer;
+	}
+	&:hover {
+		.transform(scale(1.1));
+	}
+	&.circle-1 {
+		width: 184px; height: 184px;
+		left: 756px; top: 125px;
+		background-color: #E58D00;
+		border:8px solid #ffa631;
+	}
+	&.circle-2 {
+		width: 206px; height: 206px;
+		left: 913px; top: 187px;
+		background-color: #00bdd6;
+		border:8px solid #36e7ff;
+	}
+	&.circle-3 {
+		width: 184px; height: 184px;
+		left: 1082px; top: 115px;
+		background-color: #23c9b8;
+		border:8px solid #2aeadb;
+	}
+	> .numeric {
+		position: absolute;
+		font-family: "Open Sans",sans-serif;
+		font-weight: 800;
+	}
+	&.circle-1 > .numeric {
+		color: #ed9920;
+		font-size: 225px;
+		padding-left: 6px;
+		line-height: 154px;
+	}
+	&.circle-2 > .numeric {
+		color: #1fd5ee;
+		font-size: 243px;
+		padding-left: 13px;
+		line-height: 164px;
+	}
+	&.circle-3 > .numeric {
+		color: #28dfd0;
+		font-size: 225px;
+		padding-left: 10px;
+		line-height: 159px;
+	}
+	> .definition {
+		position: absolute;
+		font-family: 'Lato', sans-serif;
+		font-weight: 700;
+		font-size: 21px;
+		text-align: center;
+		width: 100%;
+		color: #fff;
+		background-color: rgba(255,255,255,0);
+		.transition(background 1s);
+		text-transform: uppercase;
+	}
+	&:hover > .definition {
+		background-color: rgba(255,255,255,.2);
+	}
+	&.circle-1 > .definition {
+		left: 0px; top: 90px;
+		padding: 5px 0px 30px;
+	}
+	&.circle-2 > .definition {
+		left: 0px; top: 106px;
+		padding: 10px 0px 30px;
+	}
+	&.circle-3 > .definition {
+		left: 0px; top: 90px;
+		padding: 5px 0px 30px;
+	}
+}
+
+.container .core > div.objects > div.p1-machine {
+	background-image: url("../images/p1-machine.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 764px; height: 567px;
+	left: 12px; top: 123px;
+}
+
+.container .core > div.objects > div.p1-machine > div.bubbles {
+	position: absolute;
+	width: 80px; height: 80px;
+	left: 316px; top: 5px;
+}
+
+.container .core > div.objects > div.switch {
+	position: absolute;
+	width: 80px; height: 80px;
+	left: 115px; top: 415px;
+	.border-radius(50%);
+	cursor: pointer;
+	z-index: 9999;
+}
+
+.container .core > div.objects > div.p1-brain {
+	background-image: url("../images/p1-brain.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 260px; height: 203px;
+	left: 455px; top: 51px;
+	
+	.animation(p1-brain 1s infinite);
+}
+
+.container .core > div.objects > div.p2-machine {
+	background-image: url("../images/p2-machine.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 801px; height: 556px;
+	left: 338px; top: 864px;
+}
+
+.container .core > div.objects > div.p2-machine > div.bubbles {
+	position: absolute;
+	width: 80px; height: 80px;
+	left: 230px; top: 90px;
+}
+
+.container .core > div.objects div.bubbles > span.bubble1 {
+    position: absolute;
+    display: block;
+    width: 8px; height: 8px;
+    left: 19px; top: 51px;
+    z-index: 13;
+    .border-radius(60px);
+    
+	.animation(2s ease 0s normal none infinite running bubble);
+}
+
+.container .core > div.objects div.bubbles > span.bubble3 {
+	content: '';
+    position: absolute;
+    display: block;
+    width: 8px; height: 8px;
+    left: 33px; top: 49px;
+    z-index: 13;
+    .border-radius(60px);
+	background: rgba(75,192,200,0);
+    
+	.animation(1.5s ease 0s normal none infinite running bubble);
+}
+
+.container .core > div.objects div.bubbles > span.bubble2 {
+	content: '';
+    position: absolute;
+    display: block;
+    width: 8px; height: 8px;
+    left: 53px; top: 54px;
+    z-index: 13;
+    .border-radius(60px);
+	background: rgba(75,192,200,0);
+    
+	.animation(1.3s ease 0s normal none infinite running bubble);
+}
+
+.container .core > div.objects div.bubbles > span.bubble1,
+.container .core > div.objects div.bubbles > span.bubble2,
+.container .core > div.objects div.bubbles > span.bubble3 {
+	background: rgba(75,192,200,0);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(75,192,200,0) 0%, rgba(75,190,200,0.1) 35%, rgba(255,255,255,0.3) 71%, rgba(255,255,255,0.7) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(75,192,200,0)), color-stop(35%, rgba(75,190,200,0.1)), color-stop(71%, rgba(255,255,255,0.3)), color-stop(100%, rgba(255,255,255,0.7)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(75,192,200,0) 0%, rgba(75,190,200,0.1) 35%, rgba(255,255,255,0.3) 71%, rgba(255,255,255,0.7) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(75,192,200,0) 0%, rgba(75,190,200,0.1) 35%, rgba(255,255,255,0.3) 71%, rgba(255,255,255,0.7) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(75,192,200,0) 0%, rgba(75,190,200,0.1) 35%, rgba(255,255,255,0.3) 71%, rgba(255,255,255,0.7) 100%);
+	background: radial-gradient(ellipse at center, rgba(75,192,200,0) 0%, rgba(75,190,200,0.1) 35%, rgba(255,255,255,0.3) 71%, rgba(255,255,255,0.7) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4bc0c8', endColorstr='#ffffff', GradientType=1 );
+}
+
+.container .core > div.objects > div.p2-machine-pipe {
+	background-image: url("../images/p2-machine-pipe.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	position: absolute;
+	width: 69px; height: 212px;
+	left: 338px; top: 722px;
+}
+
+.container .core > div.objects > div.p2-bulb-1 {
+	background-image: url("../images/p2-bulb.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	position: absolute;
+	width: 151px; height: 280px;
+	left: 842px; top: 674px;
+	
+	filter: blur(0.5px);
+	
+	.transform(rotate(3deg));
+	.transform-origin(50% -40px 0px);
+	.animation(p2-bulb 2.2s infinite);
+}
+
+.container .core > div.objects > div.p2-bulb-2 {
+	background-image: url("../images/p2-bulb.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	position: absolute;
+	width: 305px; height: 560px;
+	left: 877px; top: 596px;
+
+	.transform(rotate(3deg));
+	.transform-origin(50% -40px 0px);
+	.animation(p2-bulb 2s infinite);
+}
+
+.container .core > div.objects > div.p2-bulb-2 > label.hover {
+	position: absolute;
+	.border-radius(50%);
+	width: 193px; height: 190px;
+	left: 61px; top: 330px;
+	z-index: 2;
+}
+
+.container .core > div.objects > div.p2-bulb-2 > label.hover:hover ~ div.hover {
+	position: absolute;
+	background-image: url("../images/p2-bulb.png");
+	background-position: center -577px;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	width: 100%; height: 100%;
+	left: 0px; top: 0px;
+	z-index: 1;
+}
+
+.container .core > div.objects > div.p2-bulb-3 {
+	background-image: url("../images/p2-bulb.png");
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	position: absolute;
+	width: 194px; height: 350px;
+	left: 1055px; top: 575px;
+	
+	filter: blur(0.3px);
+
+	.transform(rotate(3deg));
+	.transform-origin(50% -40px 0px);
+	.animation(p2-bulb 2.5s infinite);/**/
+}
+
+.container .core > div.objects > div.p2-bulb-3:after {
+	content: '';
+	background-image: url("../images/p2-bulb.png");
+	background-position: center -364px;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	position: absolute;
+	width: 100%; height: 100%;
+	top: -4px;
+	
+	.animation(15s infinite p2-bulb-after steps(1));/**/
+}
+
+.container .core > div.objects > div.p3-machine {
+	background-image: url("../images/p3-machine.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 958px; height: 862px;
+	left: 29px; top: 1385px;
+}
+
+.container .core > div.objects > div.p3-machine-shock1 {
+	background-image: url("../images/p3-machine-shock1.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 77px; height: 282px;
+	left: 470px; top: 1370px;
+}
+
+.container .core > div.objects > div.p3-machine-shock2 {
+	background-image: url("../images/p3-machine-shock2.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 321px; height: 440px;
+	left: 410px; top: 1512px;
+}
+
+.container .core > div.objects > .p3-machine-shock2.animate {
+    .animation(p3-machine-shock2 2s infinite);
+}
+
+.container .core > div.objects > div.p3-machine-footmark {
+	background-image: url("../images/p3-machine-footmark.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: absolute;
+	opacity: 0;
+	width: 307px; height: 164px;
+	left: 421px; top: 1863px;
+	
+    .animation(p3-machine-footmark 2s infinite);
+}
+
+.container .core > div.objects > div.p3-machine-smoke {
+	background-image: url("../images/p3-machine-smoke.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: absolute;
+	opacity: 0;
+	width: 50px; height: 15px;
+	left: 366px; top: 1912px;
+	
+    .animation(p3-machine-smoke 2s infinite);
+}
+
+#machine3-switch {
+	position: fixed;
+	z-index: 9999999;
+}
+
+#machine3-switch:checked ~ .container .core .objects .p3-machine-shock2  {
+	.animation-play-state(paused);
+}
+
+#machine3-switch:checked ~ .container .core .objects .p3-machine-footmark  {
+	.animation-play-state(paused);
+	display: none;
+}
+
+#machine3-switch:checked ~ .container .core .objects .p3-machine-smoke  {
+	.animation-play-state(paused);
+	display: none;
+}
+
+.animation(@value){
+    -webkit-animation: @value;
+    -moz-animation:    @value;
+    -o-animation:      @value;
+    -ms-animation:     @value;
+    animation:         @value;
+}
+
+.animation-play-state(@value){
+    -webkit-animation-play-state: @value;
+    -moz-animation-play-state:    @value;
+    -o-animation-play-state:      @value;
+    -ms-animation-play-state:     @value;
+    animation-play-state:         @value;
+}
+
+.transform-origin(@value){
+    -webkit-transform-origin: @value;
+    -moz-transform-origin:    @value;
+    -o-transform-origin:      @value;
+    -ms-transform-origin:     @value;
+    transform-origin:         @value;
+}
+
+.box-sizing(@value){
+    -webkit-box-sizing: @value;
+    -moz-box-sizing:    @value;
+    -o-box-sizing:      @value;
+    -ms-box-sizing:     @value;
+    box-sizing:         @value;
+}
+
+.border-radius(@value){
+    -webkit-border-radius: @value;
+    -moz-border-radius:    @value;
+    -o-border-radius:      @value;
+    -ms-border-radius:     @value;
+    border-radius:         @value;
+}
+
+.transform(@value){
+    -webkit-transform: @value;
+    -moz-transform:    @value;
+    -o-transform:      @value;
+    -ms-transform:     @value;
+    transform:         @value;
+}
+
+.transition(@value){
+    -webkit-transition: @value;
+    -moz-transition:    @value;
+    -o-transition:      @value;
+    -ms-transition:     @value;
+    transform:         @value;
+}
+
+.keyframes(@name) { 
+    @-webkit-keyframes @name {
+        .-frames(-webkit-);
+    }
+    @-moz-keyframes @name {
+        .-frames(-moz-);
+    }
+    @keyframes @name {
+        .-frames();
+    }
+}
+
+& {
+    .keyframes(p1-brain);.-frames(@-...){
+		0% {
+			@{-}transform: translate(0px,0px);
+		}
+		40% {
+			@{-}transform: scale(.9) translate(0px,10px); /* Standard syntax */
+		}
+		100% {
+			@{-}transform: translate(0px,0px);
+		}
+    }
+}
+
+& {
+    .keyframes(p2-bulb);.-frames(@-...){
+		0% {
+			@{-}transform: rotate(3deg);
+		}
+		50%{
+			@{-}transform: rotate(-3deg);
+		}
+		100% {
+			@{-}transform: rotate(3deg);
+		}
+    }
+}
+
+& {
+    .keyframes(p2-bulb-after);.-frames(@-...){
+		0% {opacity: 0;}
+		20% {opacity: 0;}
+		30% {opacity: 0;}
+		40% {opacity: 1;}
+		50% {opacity: 0;}
+		60% {opacity: 0;}
+		70% {opacity: 1;}
+		72% {opacity: 0;}
+		73% {opacity: 1;}
+		74% {opacity: 0;}
+		76% {opacity: 1;}
+		90% {opacity: 0;}
+		100% {opacity: 0;}
+    }
+}
+
+& {
+    .keyframes(p3-machine-shock2);.-frames(@-...){
+		0% {
+			@{-}transform: translate(0px,0px);
+		}
+		10% {
+			@{-}transform: translate(0px,80px);
+		}
+		60% {
+			@{-}transform: translate(0px,80px);
+		}
+		100% {
+			@{-}transform: translate(0px,0px);
+		}
+    }
+}
+
+& {
+    .keyframes(p3-machine-footmark);.-frames(@-...){
+		0% {
+			opacity: 0;
+		}
+		10% {
+			opacity: 0;
+		}
+		12% {
+			opacity: 1;
+		}
+		42% {
+			opacity: 1;
+		}
+		60% {
+			opacity: 1;
+			@{-}transform: translate(0px, 0px);
+		}
+		100% {
+			@{-}transform: translate(24px, 16px);
+			opacity: 0;
+		}
+    }
+}
+
+& {
+    .keyframes(p3-machine-smoke);.-frames(@-...){
+		0% {
+			opacity: 0;
+		}
+		10% {
+			opacity: 0;
+			@{-}transform: translate(0px, 0px);
+		}
+		15% {
+			opacity: .8;
+			@{-}transform: translate(-20px, 0px);
+		}
+		60% {
+			opacity: 0;
+			@{-}transform: translate(-30px, 0px);
+		}
+		100% {
+			@{-}transform: translate(24px, 16px);
+			opacity: 0;
+		}
+    }
+}
+
+& {
+    .keyframes(bubble);.-frames(@-...){
+        0% {
+            @{-}transform: scale(0) translateY(110);
+			opacity: 0;
+        }
+        1% {
+            @{-}transform: scale(0.3) translateY(110);
+			opacity: 0;
+        }
+        30% {
+            @{-}transform: scale(0.3) translateY(110);
+			opacity: .5;
+        }
+        95% {
+            @{-}transform: scale(1) translateY(-16px);
+			opacity: 1;
+        }
+        99% {
+            @{-}transform: scale(3) translateY(-5px);
+			opacity: 0;
+        }
+        100% {
+            @{-}transform: scale(3) translateY(-5px);
+			opacity: 0;
+        }
+    }
+}

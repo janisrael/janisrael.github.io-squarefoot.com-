@@ -1,0 +1,82 @@
+@prefixes: -webkit-, -moz-, -ms-, -o-, ~'';
+@prefixes-opacity: -khtml-, -moz-, -webkit-, ~'', -ms-filter, filter;
+
+// here we specialize what values are to be prefixed:
+@prefvendor: ~'(transform|filter)'; // etc...
+
+// and now the mixin that can apply all of above specializations:
+.vendorize(@property, @values) {
+  .-1();
+  .-2();
+  .-1(@i: length(@prefixes)) when (@i > 0) and not (@property = opacity) {
+    .-1(@i - 1);
+    @pref: extract(@prefixes, @i);
+    @{pref}@{property}: replace(~'@{values}', '@{prefvendor}', '@{pref}$1', 'gi');
+  }
+  
+  .-2(@i2: length(@prefixes-opacity)) when (@i2 > 0) and (@property = opacity) {
+    .-2(@i2 - 1);
+    @pref: extract(@prefixes-opacity, @i2);
+    .-20();
+    @opperc: @values * 100;
+    .-20() when (@i2 <= 4) {
+      @{pref}@{property}: @values; 
+    }
+    .-20() when (@i2 = 5) {
+      @{pref}: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+    }
+    .-20() when (@i2 = 6) {
+      @{pref}: @opperc; 
+    }
+    
+  }
+}
+
+
+.keyframes(@name) { 
+  @-webkit-keyframes @name {
+    .-frames(-webkit-);
+  }
+  @-moz-keyframes @name {
+    .-frames(-moz-);
+  }
+  @keyframes @name {
+    .-frames();
+  }
+}
+
+
+.keyframes-animation(){
+
+  & {
+    .keyframes(p4-smoke);.-frames(@-...){
+      0% {
+        @{-}transform: translate(0px, 0px);
+        .vendorize(opacity; 0);
+      }
+      60% {
+        @{-}transform: translate(0px, 0px);
+        .vendorize(opacity; 0);
+      }
+      68% {
+        .vendorize(opacity; 1);
+      }
+      72% {
+        @{-}transform: translate(-20px,10px);
+        .vendorize(opacity; 0);
+      }
+      100% {
+        @{-}transform: translate(0px, 0px);
+        .vendorize(opacity; 0);
+      }
+    }
+  }
+  
+}
+
+
+.keyframes-animation();	
+
+//div {
+//	.vendorize(animation; ~"5s 0s normal none infinite running p4-compressor"); 
+//}
